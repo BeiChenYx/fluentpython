@@ -4,6 +4,8 @@ class EchoServerClientProtocol(asyncio.Protocol):
     def connection_made(self, transport):
         peername = transport.get_extra_info('peername')
         self.transport = transport
+        print('connect: ', peername)
+        # self.transport.close()
 
     def data_received(self, data):
         message = data.decode()
@@ -13,6 +15,8 @@ class EchoServerClientProtocol(asyncio.Protocol):
         self.transport.write(data)
         print('Close the client socket')
         self.transport.close()
+    def connection_lost(self, exc):
+        print('connection_lost: ', self.transport.get_extra_info('peername'))
 
 loop = asyncio.get_event_loop()
 coro = loop.create_server(EchoServerClientProtocol, '127.0.0.1', 8888)
