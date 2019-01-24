@@ -19,8 +19,8 @@ async def echo(reader, writer):
     log = logging.getLogger('echo_{}_{}'.format(*address))
     log.debug('connection accepted')
     while True:
-        if reader.at_eof():
-            log.debug('*********buff is empty**********')
+        # if reader.at_eof():
+            # log.debug('*********buff is empty**********')
             # continue
         data = await reader.read(128)
         if data:
