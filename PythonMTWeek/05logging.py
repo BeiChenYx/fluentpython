@@ -2,9 +2,10 @@
 logging 模块的使用
 """
 import logging
-"""
+# """
 LOG_FILENAME = 'logging_example.out'
 logging.basicConfig(
+    # 给定文件名就会写入文件
     filename=LOG_FILENAME,
     level=logging.DEBUG,
 )
@@ -50,7 +51,7 @@ logfiles = glob.glob('%s*' % LOG_FILENAME)
 for filename in sorted(logfiles):
     print(filename)
 # 下面代码要运行，需要注释掉上面的代码
-""" 
+# """ 
 # -----------------------------------------------------------------
 # 日志等级
 # logging 另一个有用的功能是可以根据不同的 日志等级 生成不同的消息.
