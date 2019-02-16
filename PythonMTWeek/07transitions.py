@@ -106,3 +106,4 @@ machine.add_states([solid, liquid, gas])
 
 # Callbacks
 # 一个状态在进入和退出都可以调用回调, 可以在初始化添加或者之后添加
+machine.add_transition()
